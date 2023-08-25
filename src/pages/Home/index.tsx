@@ -31,6 +31,7 @@ interface Cycle {
   task: string;
   minutesAmount: number;
   startDate: Date;
+  interruptedDate?: Date;
 }
 
 export function Home() {
@@ -79,6 +80,20 @@ export function Home() {
     reset();
   };
 
+  const handleInterruptCycle = () => {
+    setActiveCycleId(null);
+
+    setCycles(
+      cycles.map((cycle) => {
+        if (cycle.id === activeCycleId) {
+          return { ...cycle, interruptedDate: new Date() };
+        } else {
+          return cycle;
+        }
+      })
+    );
+  };
+
   const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0;
   const currentSeconds = activeCycle ? totalSeconds - amountSecondsPassed : 0;
   const minutesAmount = Math.floor(currentSeconds / 60);
@@ -103,6 +118,7 @@ export function Home() {
           <TaskInput
             id="task"
             placeholder="Informe a tarefa"
+            disabled={!!activeCycle}
             {...register("task")}
           />
 
@@ -114,6 +130,7 @@ export function Home() {
             step={5}
             min={5}
             max={60}
+            disabled={!!activeCycle}
             {...register("minutesAmount", { valueAsNumber: true })}
           />
           <span>minutos.</span>
@@ -128,7 +145,7 @@ export function Home() {
         </TimerContainer>
 
         {activeCycle ? (
-          <PauseTimerButton type="button">
+          <PauseTimerButton onClick={handleInterruptCycle} type="button">
             <HandPalm size={28} />
             Interromper
           </PauseTimerButton>
