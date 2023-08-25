@@ -98,7 +98,7 @@ const baseTimer = styled.button`
   }
 `;
 
-export const PauseTimerButton = styled(baseTimer)`
+export const StopTimerButton = styled(baseTimer)`
   background: ${(props) => props.theme["red-500"]};
 
   &:not(:disabled):hover {
