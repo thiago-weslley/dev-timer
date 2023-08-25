@@ -76,7 +76,7 @@ export const Separator = styled.div`
   text-shadow: 3px 3px 10px ${(props) => props.theme.black};
 `;
 
-export const StartTimer = styled.button`
+const baseTimer = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,16 +87,31 @@ export const StartTimer = styled.button`
   border-radius: 8px;
   font-size: 1.8rem;
   font-weight: bold;
-  color: ${(props) => props.theme["gray-100"]};
-  background: ${(props) => props.theme["green-500"]};
-  box-shadow: 2px 2px 15px ${(props) => props.theme.black};
   cursor: pointer;
   transition: background 0.1s ease-in-out;
+  box-shadow: 2px 2px 15px ${(props) => props.theme.black};
+  color: ${(props) => props.theme["gray-100"]};
 
   &:disabled {
     opacity: 0.7;
     cursor: not-allowed;
   }
+`;
+
+export const PauseTimerButton = styled(baseTimer)`
+  background: ${(props) => props.theme["red-500"]};
+
+  &:not(:disabled):hover {
+    background: ${(props) => props.theme["red-700"]};
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px ${(props) => props.theme["red-700"]};
+  }
+`;
+
+export const StartTimerButton = styled(baseTimer)`
+  background: ${(props) => props.theme["green-500"]};
 
   &:not(:disabled):hover {
     background: ${(props) => props.theme["green-700"]};

@@ -9,11 +9,12 @@ import {
   FormContainer,
   TimerContainer,
   Separator,
-  StartTimer,
   TaskInput,
   MinutesAmountInput,
+  StartTimerButton,
+  PauseTimerButton,
 } from "./styles";
-import { Play } from "phosphor-react";
+import { HandPalm, Play } from "phosphor-react";
 
 const newCycleFormValidationSchema = zod.object({
   task: zod.string().min(1, "Informe a tarefa"),
@@ -126,10 +127,17 @@ export function Home() {
           <span>{seconds[1]}</span>
         </TimerContainer>
 
-        <StartTimer type="submit" disabled={isSubmitDisabled}>
-          <Play size={28} />
-          Começar
-        </StartTimer>
+        {activeCycle ? (
+          <PauseTimerButton type="button">
+            <HandPalm size={28} />
+            Interromper
+          </PauseTimerButton>
+        ) : (
+          <StartTimerButton type="submit" disabled={isSubmitDisabled}>
+            <Play size={28} />
+            Começar
+          </StartTimerButton>
+        )}
       </form>
     </HomeContainer>
   );
