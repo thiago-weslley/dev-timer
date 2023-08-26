@@ -58,6 +58,8 @@ export function Timer() {
   useEffect(() => {
     if (activeCycle) {
       document.title = `${minutes}:${seconds} - Time to focus`;
+    } else {
+      document.title = "Dev Timer";
     }
   }, [activeCycle, minutes, seconds]);
 
