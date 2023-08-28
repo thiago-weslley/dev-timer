@@ -15,6 +15,20 @@ export const TimerContainer = styled.div`
     text-shadow: 3px 3px 8px ${(props) => props.theme.black};
     box-shadow: 2px 2px 15px ${(props) => props.theme.black};
   }
+
+  @media screen and (max-width: 700px) {
+    font-size: 9rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 6rem;
+    gap: 1rem;
+  }
+
+  @media screen and (max-width: 290px) {
+    font-size: 4rem;
+    gap: 0.5rem;
+  }
 `;
 
 export const Separator = styled.div`
