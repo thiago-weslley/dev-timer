@@ -3,7 +3,7 @@
 ## 📄 Descrição
 O Dev-Timer é uma aplicação React que permite que você gerencie seus ciclos de trabalho com facilidade, ajudando a manter o foco e a produtividade. Através de uma interface intuitiva e elegante, você pode criar ciclos personalizados com tarefas específicas e definir a duração de cada ciclo.
 
-#### Recursos:
+### Recursos:
 
 - Crie ciclos personalizados para suas tarefas de trabalho.
 - Defina a duração dos ciclos com um mínimo de 5 minutos e máximo de 60 minutos.
@@ -16,7 +16,7 @@ O Dev-Timer é uma aplicação React que permite que você gerencie seus ciclos 
 
 <br>
 
-## 💻 Este projeto foi desenvolvido com
+## 🧑‍💻 Este projeto foi desenvolvido com
 
 - <b>Node:</b> v18.14.2
 - <b>React:</b> 18.2.0
@@ -27,19 +27,32 @@ O Dev-Timer é uma aplicação React que permite que você gerencie seus ciclos 
 - <b>date-fns:</b> para o cálculo do tempo
 <br>
 
-## 💻 Rodando o projeto
+## 💻 Instalar e rodar o projeto
 
-Para iniciar o projeto, clone este repositório
+Rodar o dev-timer em sua máquina local é uma tarefa extremamente simples.
 
+### Dependências globais
+
+É necessário ter a seguinte dependência instalada em sua máquina:
+
+- Node.js LTS v16 (ou superior)
+
+### Dependências locais
+
+Para iniciar o projeto, clone este repositório:
 ```bash
 git clone https://github.com/thiago-weslley/dev-timer.git
 ```
-Em seguida, instale as dependências e inicie o projeto
+
+Em seguida, instale as dependências:
 ```bash
-# Instale as dependências do projeto
 npm install
 ```
+
+### Rodar o projeto:
+
+Para rodar o projeto localmente, basta executar o comando abaixo:
+
 ```bash
-# Inicie o projeto
 npm run dev
 ```
